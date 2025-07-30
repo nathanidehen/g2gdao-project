@@ -22,9 +22,6 @@ const HeroSection = () => {
           <Button size="lg" className="font-mono text-lg px-8">
             INVEST NOW
           </Button>
-          <Button variant="outline" size="lg" className="font-mono text-lg px-8">
-            FUND RESEARCH
-          </Button>
         </div>
 
         {/* Stats Grid */}
