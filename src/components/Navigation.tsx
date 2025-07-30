@@ -1,19 +1,27 @@
-import { Search, Menu } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from './ThemeToggle';
 
-const Navigation = () => {
+interface NavigationProps {
+  isVisible: boolean;
+  onClose: () => void;
+}
+
+const Navigation = ({ isVisible, onClose }: NavigationProps) => {
+  if (!isVisible) return null;
+
   return (
-    <nav className="relative z-10 border-b border-border bg-background/80 backdrop-blur-sm">
+    <nav className="relative z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <h1 className="rekt-title text-primary">REKT.MOLECULE</h1>
             <div className="hidden md:flex items-center space-x-6">
-              <a href="#" className="terminal-text hover:text-primary transition-colors">NEWS</a>
-              <a href="#" className="terminal-text hover:text-primary transition-colors">RESEARCH</a>
-              <a href="#" className="terminal-text hover:text-primary transition-colors">PROJECTS</a>
-              <a href="#" className="terminal-text hover:text-primary transition-colors">DEFI</a>
+              <a href="#" className="terminal-text hover:text-primary transition-colors">WHITEPAPER</a>
+              <a href="#" className="terminal-text hover:text-primary transition-colors">TEAM</a>
+              <a href="#" className="terminal-text hover:text-primary transition-colors">TOKENOMICS</a>
+              <a href="#" className="terminal-text hover:text-primary transition-colors">DEVELOPERS</a>
+              <a href="#" className="terminal-text hover:text-primary transition-colors">COMMUNITY</a>
             </div>
           </div>
           
@@ -28,8 +36,8 @@ const Navigation = () => {
             </div>
             <ThemeToggle />
             <Button variant="outline" className="font-mono">CONNECT</Button>
-            <Button className="md:hidden" variant="ghost" size="icon">
-              <Menu className="w-5 h-5" />
+            <Button variant="ghost" size="icon" onClick={onClose}>
+              <X className="w-5 h-5" />
             </Button>
           </div>
         </div>

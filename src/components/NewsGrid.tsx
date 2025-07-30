@@ -82,7 +82,11 @@ const getStatusBadge = (status: NewsItem['status']) => {
   }
 };
 
-const NewsGrid = () => {
+interface NewsGridProps {
+  onCardClick: () => void;
+}
+
+const NewsGrid = ({ onCardClick }: NewsGridProps) => {
   return (
     <section className="relative z-10 py-16 px-4">
       <div className="container mx-auto">
@@ -93,7 +97,11 @@ const NewsGrid = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {newsItems.map((item) => (
-            <Card key={item.id} className="border-2 hover:border-primary transition-colors group cursor-pointer">
+            <Card 
+              key={item.id} 
+              className="border-2 hover:border-primary transition-colors group cursor-pointer"
+              onClick={onCardClick}
+            >
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between mb-2">
                   {getStatusBadge(item.status)}
