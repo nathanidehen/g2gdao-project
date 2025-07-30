@@ -36,11 +36,16 @@ const FloatingTokenWidget = () => {
       <Card className="bg-background/95 backdrop-blur-sm border shadow-lg">
         {/* Header */}
         <div 
-          className="p-3 border-b cursor-pointer flex items-center justify-between hover:bg-muted/50 transition-colors"
-          onClick={() => setIsExpanded(!isExpanded)}
+          className="p-3 border-b cursor-pointer flex items-center justify-between hover:bg-muted/50 transition-colors select-none"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Widget clicked, current state:', isExpanded);
+            setIsExpanded(!isExpanded);
+          }}
         >
-          <h3 className="font-mono font-semibold text-sm">Buy G2G Tokens</h3>
-          {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          <h3 className="font-mono font-semibold text-sm pointer-events-none">Buy G2G Tokens</h3>
+          {isExpanded ? <ChevronUp className="w-4 h-4 pointer-events-none" /> : <ChevronDown className="w-4 h-4 pointer-events-none" />}
         </div>
 
         {/* Expandable Content */}
