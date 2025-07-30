@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="relative z-10 py-20 px-4">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl md:text-6xl font-bold font-mono mb-8 tracking-tighter">
-          JOIN THE INTERNET INFRASTRUCTURE REVOLUTION
+          JOIN THE INTERNET<br />INFRASTRUCTURE REVOLUTION
         </h1>
         
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
