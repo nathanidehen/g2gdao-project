@@ -14,7 +14,7 @@ const HeroSection = () => {
             The Future of Digital Identity, Privacy & Value Creation is HERE
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            From Patent-Protected Technology to Digital Insurance Escrow - We're Building the infrastructure for Web3's Next Evolution
+            From Patent-Protected Technology to Digital Insurance Escrow - <br />We're Building the infrastructure for Web3's Next Evolution
           </p>
         </div>
         
