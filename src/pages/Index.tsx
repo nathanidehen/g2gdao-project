@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import NewsGrid from '@/components/NewsGrid';
 import FloatingTokenWidget from '@/components/FloatingTokenWidget';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const Index = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -32,6 +33,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Banner />
+      <div className="fixed top-2 right-2 z-[60]">
+        <ThemeToggle />
+      </div>
       <Navigation isVisible={isMenuVisible} onClose={handleMenuClose} />
       <main>
         <HeroSection />
