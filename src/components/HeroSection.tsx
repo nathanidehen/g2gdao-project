@@ -11,7 +11,7 @@ const HeroSection = () => {
         
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
           <Button size="lg" className="font-mono text-lg px-8">
-            EXPLORE HACKS
+            INVEST NOW
           </Button>
           <Button variant="outline" size="lg" className="font-mono text-lg px-8">
             FUND RESEARCH
