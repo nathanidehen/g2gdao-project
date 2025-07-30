@@ -15,7 +15,6 @@ const Navigation = ({ isVisible, onClose }: NavigationProps) => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
-            <h1 className="rekt-title text-primary">REKT.MOLECULE</h1>
             <div className="hidden md:flex items-center space-x-6">
               <a href="#" className="terminal-text hover:text-primary transition-colors">WHITEPAPER</a>
               <a href="#" className="terminal-text hover:text-primary transition-colors">TEAM</a>
