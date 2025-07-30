@@ -1,5 +1,6 @@
 import { Search, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from './ThemeToggle';
 
 interface NavigationProps {
   isVisible: boolean;
@@ -32,6 +33,7 @@ const Navigation = ({ isVisible, onClose }: NavigationProps) => {
                 className="bg-transparent border-none outline-none text-sm font-mono"
               />
             </div>
+            <ThemeToggle />
             <Button variant="outline" className="font-mono">CONNECT</Button>
             <Button variant="ghost" size="icon" onClick={onClose}>
               <X className="w-5 h-5" />
