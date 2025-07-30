@@ -83,7 +83,7 @@ const getStatusBadge = (status: NewsItem['status']) => {
 };
 
 interface NewsGridProps {
-  onCardClick: () => void;
+  onCardClick: (cardId: string) => void;
 }
 
 const NewsGrid = ({ onCardClick }: NewsGridProps) => {
@@ -100,7 +100,7 @@ const NewsGrid = ({ onCardClick }: NewsGridProps) => {
             <Card 
               key={item.id} 
               className="border-2 hover:border-primary transition-colors group cursor-pointer"
-              onClick={onCardClick}
+              onClick={() => onCardClick(item.id)}
             >
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between mb-2">
