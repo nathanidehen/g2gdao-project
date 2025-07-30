@@ -10,7 +10,7 @@ const HeroSection = () => {
         </h1>
         
         <div className="max-w-4xl mx-auto mb-12">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-primary">
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-primary whitespace-nowrap">
             The Future of Digital Identity, Privacy & Value Creation is HERE
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
