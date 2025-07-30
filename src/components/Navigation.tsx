@@ -34,7 +34,7 @@ const Navigation = ({ isVisible, onClose }: NavigationProps) => {
               />
             </div>
             <ThemeToggle />
-            <Button variant="outline" className="font-mono">CONNECT</Button>
+            <Button variant="outline" className="font-mono">LOGIN</Button>
             <Button variant="ghost" size="icon" onClick={onClose}>
               <X className="w-5 h-5" />
             </Button>
