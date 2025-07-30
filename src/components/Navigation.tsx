@@ -1,5 +1,6 @@
 import { Search, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   return (
@@ -25,6 +26,7 @@ const Navigation = () => {
                 className="bg-transparent border-none outline-none text-sm font-mono"
               />
             </div>
+            <ThemeToggle />
             <Button variant="outline" className="font-mono">CONNECT</Button>
             <Button className="md:hidden" variant="ghost" size="icon">
               <Menu className="w-5 h-5" />
