@@ -12,7 +12,7 @@ const Navigation = ({ isVisible, onClose }: NavigationProps) => {
 
   return (
     <nav className="relative z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-4 pr-[440px]">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <div className="hidden md:flex items-center space-x-6">
