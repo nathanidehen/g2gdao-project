@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="relative z-10 py-20 px-4">
       <div className="container mx-auto text-center">
         <h1 className="text-6xl md:text-8xl font-bold font-mono mb-6 tracking-tighter">
-          DeFi<span className="text-primary">.</span>REKT
+          JOIN THE INTERNET INFRASTRUCTURE REVOLUTION
         </h1>
         <p className="text-xl md:text-2xl font-mono text-muted-foreground mb-8 max-w-2xl mx-auto">
           JOIN THE INTERNET INFRASTRUCTURE REVOLUTION
