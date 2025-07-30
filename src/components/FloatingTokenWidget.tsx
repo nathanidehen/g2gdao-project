@@ -32,11 +32,11 @@ const FloatingTokenWidget = () => {
   }, []);
 
   return (
-    <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 w-80 max-w-[calc(100vw-2rem)]">
+    <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 w-72 max-w-[calc(100vw-2rem)]">
       <Card className="bg-background/95 backdrop-blur-sm border shadow-lg">
         {/* Header */}
         <div 
-          className="p-4 border-b cursor-pointer flex items-center justify-between"
+          className="p-3 border-b cursor-pointer flex items-center justify-between hover:bg-muted/50 transition-colors"
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <h3 className="font-mono font-semibold text-sm">Buy G2G Tokens</h3>
@@ -45,15 +45,15 @@ const FloatingTokenWidget = () => {
 
         {/* Expandable Content */}
         {isExpanded && (
-          <div className="p-4 space-y-4">
+          <div className="p-3 space-y-3">
             {/* Price Ticker */}
-            <div className="bg-primary/10 rounded-lg p-3 flex justify-between items-center">
+            <div className="bg-primary/10 rounded-lg p-2 flex justify-between items-center">
               <div className="font-mono">
-                <span className="text-sm text-muted-foreground">G2G: </span>
-                <span className="font-semibold">${priceData.current.toFixed(4)}</span>
+                <span className="text-xs text-muted-foreground">G2G: </span>
+                <span className="font-semibold text-sm">${priceData.current.toFixed(4)}</span>
               </div>
               <div className={`text-xs px-2 py-1 rounded ${
-                priceData.change24h >= 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                priceData.change24h >= 0 ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
               }`}>
                 {priceData.change24h >= 0 ? '+' : ''}{priceData.change24h.toFixed(2)}%
               </div>
@@ -84,21 +84,21 @@ const FloatingTokenWidget = () => {
               <iframe 
                 src="https://app.uniswap.org/#/swap?theme=light&tokenList=default&defaultInputToken=NATIVE&defaultOutputToken=0x44f4c19c1229e9c4143efb3c7dab382d10df72fa&defaultInputAmount=1"
                 width="100%"
-                height="400"
+                height="320"
                 className="border-none"
                 title="Uniswap Widget"
               />
             </div>
 
             {/* Disclaimer */}
-            <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded">
+            <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded text-center">
               <strong>⚠️ Important:</strong> This widget connects directly to Uniswap. 
               Always verify the token contract address.
             </div>
 
             {/* CTA */}
-            <div className="bg-primary/5 p-3 rounded-lg">
-              <div className="font-semibold text-sm mb-1">🚀 Join the Patent Revolution</div>
+            <div className="bg-primary/5 p-2 rounded-lg">
+              <div className="font-semibold text-xs mb-1">🚀 Join the Patent Revolution</div>
               <div className="text-xs text-muted-foreground">
                 G2G tokens give you governance rights and revenue sharing in our patent licensing DAO.
               </div>

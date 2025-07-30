@@ -9,7 +9,7 @@ const HeroSection = () => {
           DeFi<span className="text-primary">.</span>REKT
         </h1>
         <p className="text-xl md:text-2xl font-mono text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Decentralized Science meets Terminal Aesthetics. 
+          JOIN THE INTERNET INFRASTRUCTURE REVOLUTION
           <br />Track exploits, fund research, build the future.
         </p>
         
