@@ -12,9 +12,12 @@ const Navigation = ({ isVisible, onClose }: NavigationProps) => {
 
   return (
     <nav className="relative z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-4 pr-[440px]">
+      <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
+          </div>
+          
+          <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center space-x-6">
               <a href="#" className="terminal-text hover:text-primary transition-colors">WHITEPAPER</a>
               <a href="#" className="terminal-text hover:text-primary transition-colors">TEAM</a>
@@ -22,9 +25,6 @@ const Navigation = ({ isVisible, onClose }: NavigationProps) => {
               <a href="#" className="terminal-text hover:text-primary transition-colors">DEVELOPERS</a>
               <a href="#" className="terminal-text hover:text-primary transition-colors">COMMUNITY</a>
             </div>
-          </div>
-          
-          <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center space-x-2 bg-muted rounded-md px-3 py-2">
               <Search className="w-4 h-4 text-muted-foreground" />
               <input 
