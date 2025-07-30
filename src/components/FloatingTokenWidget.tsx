@@ -32,7 +32,7 @@ const FloatingTokenWidget = () => {
   }, []);
 
   return (
-    <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 w-72 max-w-[calc(100vw-2rem)]">
+    <div className="fixed left-4 top-4 z-50 w-72 max-w-[calc(100vw-2rem)]">
       <Card className="bg-background/95 backdrop-blur-sm border shadow-lg">
         {/* Header */}
         <div 
