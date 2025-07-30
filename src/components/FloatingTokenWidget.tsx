@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
 const FloatingTokenWidget = () => {
+  console.log('FloatingTokenWidget rendering');
   const [isExpanded, setIsExpanded] = useState(false);
   const [priceData, setPriceData] = useState({
     current: 8.50,
