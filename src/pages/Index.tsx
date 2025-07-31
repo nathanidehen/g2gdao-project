@@ -1035,7 +1035,11 @@ const Index = () => {
   }, [selectedCard]);
 
   const handleCardClick = (cardId: string) => {
-    setSearchParams({ card: cardId });
+    if (cardId === 'ecosystem-tree') {
+      navigate('/ecosystem');
+    } else {
+      setSearchParams({ card: cardId });
+    }
   };
 
   const handleMenuClose = () => {

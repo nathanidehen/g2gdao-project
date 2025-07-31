@@ -78,7 +78,7 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
   }
 
   return (
-    <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-16 z-40">
+    <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-16 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Empty space for left side */}

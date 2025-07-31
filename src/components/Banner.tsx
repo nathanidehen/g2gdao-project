@@ -1,4 +1,3 @@
-
 const Banner = () => {
   return (
     <div className="sticky top-0 z-50 bg-primary text-primary-foreground py-2 px-4 text-center">

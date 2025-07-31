@@ -17,6 +17,7 @@ import Compliance from "./pages/Compliance";
 
 import NotFound from "./pages/NotFound";
 
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -54,6 +55,7 @@ const App = () => (
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THIS COMMENT */}
             {/* Example: <Route path="/custom-page" element={<CustomPage />} /> */}
+            
             
             {/* Catch-all route for 404 Not Found */}
            
