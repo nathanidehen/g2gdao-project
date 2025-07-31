@@ -11,7 +11,7 @@ import Governance from "./pages/Governance";
 import TokenMetrics from "./pages/TokenMetrics";
 import Roadmap from "./pages/Roadmap";
 import NotFound from "./pages/NotFound";
-import EcosystemPage from "./pages/EcosystemPage";
+
 
 const queryClient = new QueryClient();
 
@@ -34,7 +34,7 @@ const App = () => (
             <Route path="/governance" element={<Governance />} />
             <Route path="/token-metrics" element={<TokenMetrics />} />
             <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/ecosystem" element={<EcosystemPage />} />
+            
             
             {/* Catch-all route for 404 Not Found */}
            
