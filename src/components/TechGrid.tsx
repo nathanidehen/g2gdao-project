@@ -59,6 +59,14 @@ const techItems: TechItem[] = [
     subtitle: 'Portfolio Management Excellence',
     category: 'INVESTMENT',
     status: 'platform'
+  },
+  {
+    id: 'ecosystem-tree',
+    title: 'G-RADE ECOSYSTEM',
+    excerpt: 'Explore the interconnected network of companies and technologies that form the G-RADE decentralized ecosystem.',
+    subtitle: 'Decentralized Network',
+    category: 'ECOSYSTEM',
+    status: 'infrastructure'
   }
 ];
 
