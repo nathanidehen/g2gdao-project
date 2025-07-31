@@ -18,7 +18,7 @@ const companies: Company[] = [
 const EcosystemTree = () => {
   return (
     <div className="min-h-screen bg-background p-8 pt-24 relative z-10">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="rekt-title text-5xl mb-4 text-primary animate-fade-in">G-RADE ECOSYSTEM</h1>
           <p className="article-meta text-muted-foreground">DECENTRALIZED NETWORK</p>
@@ -36,44 +36,48 @@ const EcosystemTree = () => {
           </div>
 
           {/* Tree Structure */}
-          <div className="relative flex flex-col items-center">
-            {/* Vertical line from root */}
-            <div className="w-0.5 h-16 bg-primary"></div>
+          <div className="relative w-full max-w-6xl">
+            {/* Vertical line from root down */}
+            <div className="flex justify-center">
+              <div className="w-0.5 h-16 bg-primary"></div>
+            </div>
             
-            {/* Horizontal main branch */}
-            <div className="relative">
-              <div className="w-[800px] h-0.5 bg-primary"></div>
-              
-              {/* Vertical lines to child nodes */}
-              <div className="absolute top-0 w-full flex justify-between px-8">
-                {companies.map((_, index) => (
-                  <div key={index} className="relative flex justify-center">
-                    <div className="w-0.5 h-16 bg-primary"></div>
-                  </div>
-                ))}
+            {/* Horizontal connecting line */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-5xl h-0.5 bg-primary relative">
+                {/* Vertical lines down to each child */}
+                <div className="absolute top-0 w-full flex justify-between px-12">
+                  {companies.map((_, index) => (
+                    <div key={index} className="flex justify-center">
+                      <div className="w-0.5 h-16 bg-primary"></div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Company Nodes */}
-            <div className="w-[800px] flex justify-between px-8 mt-0">
-              {companies.map((company, index) => (
-                <div 
-                  key={index} 
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${0.2 + index * 0.1}s` }}
-                >
-                  <Card className="p-3 border border-border bg-card hover:border-primary hover:shadow-lg transition-all duration-300 cursor-pointer group w-[120px]">
-                    <div className="text-center">
-                      <h3 className="font-mono font-semibold text-xs mb-1 group-hover:text-primary transition-colors leading-tight">
-                        {company.name}
-                      </h3>
-                      <p className="article-meta text-xs text-muted-foreground">
-                        {company.description}
-                      </p>
-                    </div>
-                  </Card>
-                </div>
-              ))}
+            <div className="w-full max-w-5xl mx-auto px-12">
+              <div className="flex justify-between">
+                {companies.map((company, index) => (
+                  <div 
+                    key={index} 
+                    className="animate-fade-in flex justify-center"
+                    style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+                  >
+                    <Card className="p-3 border border-border bg-card hover:border-primary hover:shadow-lg transition-all duration-300 cursor-pointer group w-[140px]">
+                      <div className="text-center">
+                        <h3 className="font-mono font-semibold text-xs mb-1 group-hover:text-primary transition-colors leading-tight">
+                          {company.name}
+                        </h3>
+                        <p className="article-meta text-xs text-muted-foreground">
+                          {company.description}
+                        </p>
+                      </div>
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
