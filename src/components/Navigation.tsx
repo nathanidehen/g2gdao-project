@@ -56,7 +56,26 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
     setIsTokenomicsOpen(false);
   };
 
-  if (!isVisible) return null;
+  // Always render LOGIN button, even when main nav is hidden
+  const LoginButton = () => (
+    <Button 
+      variant="outline" 
+      className="font-mono"
+      onClick={() => window.open('https://investor.g2gdao.com/', '_blank')}
+    >
+      LOGIN
+    </Button>
+  );
+
+  // If navigation is not visible, show only LOGIN button and theme toggle
+  if (!isVisible) {
+    return (
+      <div className="fixed top-20 right-4 z-40 flex items-center space-x-2">
+        <ThemeToggle />
+        <LoginButton />
+      </div>
+    );
+  }
 
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-16 z-40">
@@ -196,6 +215,13 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
               <Search className="w-4 h-4" />
             </Button>
             <ThemeToggle />
+            <Button 
+              variant="outline" 
+              className="font-mono"
+              onClick={() => window.open('https://investor.g2gdao.com/', '_blank')}
+            >
+              LOGIN
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -342,6 +368,17 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
                 <Button variant="ghost" size="sm" className="w-full justify-start">
                   <Search className="w-4 h-4 mr-2" />
                   Search
+                </Button>
+              </div>
+
+              {/* Mobile LOGIN Button */}
+              <div className="px-4 py-2">
+                <Button 
+                  variant="outline" 
+                  className="w-full font-mono"
+                  onClick={() => window.open('https://investor.g2gdao.com/', '_blank')}
+                >
+                  LOGIN
                 </Button>
               </div>
             </div>
