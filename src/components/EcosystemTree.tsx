@@ -26,48 +26,43 @@ const EcosystemTree = () => {
 
         <div className="flex flex-col items-center">
           {/* Root Node */}
-          <div className="animate-scale-in mb-8">
-            <Card className="p-8 border-2 border-primary bg-card hover:bg-accent/10 transition-all duration-300 hover:scale-105 shadow-lg">
+          <div className="animate-scale-in mb-0">
+            <Card className="p-6 border-2 border-primary bg-card transition-all duration-300 shadow-lg">
               <div className="text-center">
-                <h2 className="font-mono font-bold text-2xl text-primary mb-2">G-RADE.ORG</h2>
-                <p className="article-meta text-muted-foreground">ROOT PROTOCOL</p>
+                <h2 className="font-mono font-bold text-xl text-primary mb-1">G-RADE.ORG</h2>
+                <p className="article-meta text-muted-foreground text-sm">ROOT PROTOCOL</p>
               </div>
             </Card>
           </div>
 
-          {/* Line Art Tree Structure */}
-          <div className="relative w-full max-w-5xl mb-8">
-            {/* Main trunk */}
-            <div className="w-0.5 h-20 bg-primary mx-auto animate-fade-in"></div>
+          {/* Tree Structure */}
+          <div className="relative flex flex-col items-center">
+            {/* Vertical line from root */}
+            <div className="w-0.5 h-16 bg-primary"></div>
             
             {/* Horizontal main branch */}
             <div className="relative">
-              <div className="w-96 h-0.5 bg-primary mx-auto"></div>
+              <div className="w-[800px] h-0.5 bg-primary"></div>
               
-              {/* Vertical branches to nodes */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 flex justify-between">
+              {/* Vertical lines to child nodes */}
+              <div className="absolute top-0 w-full flex justify-between px-8">
                 {companies.map((_, index) => (
-                  <div key={index} className="relative">
-                    <div 
-                      className="w-0.5 h-16 bg-primary animate-fade-in"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    ></div>
+                  <div key={index} className="relative flex justify-center">
+                    <div className="w-0.5 h-16 bg-primary"></div>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Company Nodes in Line Art Tree Layout */}
-          <div className="w-full max-w-5xl">
-            <div className="flex justify-between items-start gap-4">
+            {/* Company Nodes */}
+            <div className="w-[800px] flex justify-between px-8 mt-0">
               {companies.map((company, index) => (
                 <div 
                   key={index} 
-                  className="animate-fade-in hover-scale flex-1"
+                  className="animate-fade-in"
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
-                  <Card className="p-3 border border-border bg-card hover:border-primary hover:shadow-lg transition-all duration-300 cursor-pointer group h-full">
+                  <Card className="p-3 border border-border bg-card hover:border-primary hover:shadow-lg transition-all duration-300 cursor-pointer group w-[120px]">
                     <div className="text-center">
                       <h3 className="font-mono font-semibold text-xs mb-1 group-hover:text-primary transition-colors leading-tight">
                         {company.name}
