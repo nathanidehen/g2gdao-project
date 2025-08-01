@@ -1,8 +1,7 @@
-import { Search, Menu, X, ChevronDown } from 'lucide-react';
+import { Search, Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
-import ThemeToggle from './ThemeToggle';
 
 interface NavigationProps {
   isVisible: boolean;
@@ -13,9 +12,16 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTokenomicsOpen, setIsTokenomicsOpen] = useState(false);
   const [isTeamOpen, setIsTeamOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   
   const tokenomicsRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
+
+  // Simple theme toggle
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle('dark');
+  };
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -67,6 +73,13 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
     </Button>
   );
 
+  // Theme toggle component
+  const ThemeToggle = () => (
+    <Button variant="ghost" size="sm" onClick={toggleTheme}>
+      {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+    </Button>
+  );
+
   // If navigation is not visible, show only LOGIN button and theme toggle
   if (!isVisible) {
     return (
@@ -80,7 +93,7 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-16 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-24">
           {/* Empty space for left side */}
           <div></div>
 
@@ -104,38 +117,38 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
               </button>
               
               {isTeamOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-xl py-6 z-[9999] min-h-[400px]">
                   <Link 
                     to="/our-mission" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors border-b border-border/50"
                     onClick={() => setIsTeamOpen(false)}
                   >
                     Our Mission
                   </Link>
                   <Link 
                     to="/team" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors border-b border-border/50"
                     onClick={() => setIsTeamOpen(false)}
                   >
                     Team
                   </Link>
                   <Link 
                     to="/legal-framework" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors border-b border-border/50"
                     onClick={() => setIsTeamOpen(false)}
                   >
                     Legal Framework
                   </Link>
                   <Link 
                     to="/compliance" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors border-b border-border/50"
                     onClick={() => setIsTeamOpen(false)}
                   >
                     Compliance
                   </Link>
                   <Link 
                     to="/contact" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors"
                     onClick={() => setIsTeamOpen(false)}
                   >
                     Contact
@@ -155,38 +168,38 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
               </button>
               
               {isTokenomicsOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-xl py-6 z-[9999] min-h-[450px]">
                   <Link 
                     to="/token-overview" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors border-b border-border/50"
                     onClick={() => setIsTokenomicsOpen(false)}
                   >
                     Token Overview
                   </Link>
                   <Link 
                     to="/token-metrics" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors border-b border-border/50"
                     onClick={() => setIsTokenomicsOpen(false)}
                   >
                     Token Metrics
                   </Link>
                   <Link 
                     to="/how-to-buy-g2g" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors border-b border-border/50"
                     onClick={() => setIsTokenomicsOpen(false)}
                   >
                     How to Buy G2G
                   </Link>
                   <Link 
                     to="/governance" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors border-b border-border/50"
                     onClick={() => setIsTokenomicsOpen(false)}
                   >
                     Governance
                   </Link>
                   <Link 
                     to="/roadmap" 
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                    className="block px-6 py-6 text-base text-foreground hover:bg-muted transition-colors"
                     onClick={() => setIsTokenomicsOpen(false)}
                   >
                     Roadmap
@@ -215,13 +228,7 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
               <Search className="w-4 h-4" />
             </Button>
             <ThemeToggle />
-            <Button 
-              variant="outline" 
-              className="font-mono"
-              onClick={() => window.open('https://investor.g2gdao.com/', '_blank')}
-            >
-              LOGIN
-            </Button>
+            <LoginButton />
           </div>
 
           {/* Mobile menu button */}
@@ -262,35 +269,35 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
                   <div className="mt-2 ml-4 space-y-2">
                     <Link 
                       to="/our-mission" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Our Mission
                     </Link>
                     <Link 
                       to="/team" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Team
                     </Link>
                     <Link 
                       to="/legal-framework" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Legal Framework
                     </Link>
                     <Link 
                       to="/compliance" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Compliance
                     </Link>
                     <Link 
                       to="/contact" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Contact
@@ -312,35 +319,35 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
                   <div className="mt-2 ml-4 space-y-2">
                     <Link 
                       to="/token-overview" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Token Overview
                     </Link>
                     <Link 
                       to="/token-metrics" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Token Metrics
                     </Link>
                     <Link 
                       to="/how-to-buy-g2g" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       How to Buy G2G
                     </Link>
                     <Link 
                       to="/governance" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Governance
                     </Link>
                     <Link 
                       to="/roadmap" 
-                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                      className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                       onClick={closeMobileMenu}
                     >
                       Roadmap
@@ -373,13 +380,7 @@ const Navigation: React.FC<NavigationProps> = ({ isVisible, onClose }) => {
 
               {/* Mobile LOGIN Button */}
               <div className="px-4 py-2">
-                <Button 
-                  variant="outline" 
-                  className="w-full font-mono"
-                  onClick={() => window.open('https://investor.g2gdao.com/', '_blank')}
-                >
-                  LOGIN
-                </Button>
+                <LoginButton />
               </div>
             </div>
           </div>
