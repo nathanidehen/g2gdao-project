@@ -10,7 +10,8 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const getDetailedContent = (cardId: string) => {
-  const content = {'grade-research': {
+  const content = {
+    'grade-research': {
       title: 'G-RADE™ Research Platform',
       content: (
         <div className="max-w-6xl mx-auto px-4 py-16">
@@ -148,7 +149,7 @@ const getDetailedContent = (cardId: string) => {
         </div>
       )
     },
-    };
+  };
 
   return content[cardId as keyof typeof content] || null;
 };
@@ -168,6 +169,7 @@ const Index = () => {
       setIsMenuVisible(false);
     }
   }, [selectedCard]);
+  
   const handleCardClick = (cardId: string) => {
     if (cardId === 'ecosystem-tree') {
       navigate('/ecosystem');
@@ -193,22 +195,23 @@ const Index = () => {
   const detailedContent = selectedCard ? getDetailedContent(selectedCard) : null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
       <Banner />
       <Navigation isVisible={isMenuVisible} onClose={handleMenuClose} />
       
+      {/* Widget always visible - positioned absolutely */}
+      <FloatingTokenWidget />
+      
       {detailedContent ? (
-        <main className="pt-8">
+        <main className="pt-20">
           {detailedContent.content}
         </main>
       ) : (
-        <main>
+        <main className="pt-20">
           <HeroSection />
           <TechGrid onCardClick={handleCardClick} />
         </main>
       )}
-      
-      <FloatingTokenWidget />
     </div>
   );
 };
